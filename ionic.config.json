@@ -1,0 +1,7 @@
+{
+  "name": "linuxapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
