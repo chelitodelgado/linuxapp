@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+$border-radius-value: 8px;
+
+ion-header{
+  background: #f4f5f8;
+  color:white;
+}
+
+ion-title {
+  color: #757575;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  text-transform: initial;
+}
+
+body{
+	// font-family: 'Montserrat', sans-serif;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	background-color: #E1F8FF;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  padding-bottom: 100px;
+}
+
+.todolist-container{
+	position: relative;
+	height: auto;
+	padding: 0;
+	background-color: #fff;
+
+	.todo-tasks-list{
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		overflow-y: auto;
+		.task{
+			padding: 1.3em 1em 1.3em 2.5rem;
+			transition: .4s ease-in-out;
+
+			.task-infos{
+				min-width: 85%;
+				display: inline-block;
+				.time{
+					margin-bottom: 10px;
+					color: #a59797;
+          font-family: 'Ubuntu', sans-serif;
+					i{
+						font-size: inherit;
+						margin-right: 5px;
+					}
+				}
+				.title{
+					color: #757575;
+				}
+			}
+
+		}
+	}
+}

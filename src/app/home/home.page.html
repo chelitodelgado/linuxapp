@@ -1,20 +1,61 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div>
+    <ion-buttons slot="start" class="menu_btn">
+      <ion-menu-button color="ligth"></ion-menu-button>
+    </ion-buttons>
   </div>
+
+  <div class="top">
+    <div class="nameText">
+      <p>Linux <span>Commands</span> </p>
+      <h6>Espanol | Ingles</h6>
+      <ion-toggle color="primary" (click)="changeLang()"></ion-toggle>
+    </div>
+    <div class="imgageThumbnall">
+      <img src="../../assets/images/tux.png">
+    </div>
+  </div>
+
+  <div class="middleBox">
+    <div class="firstDiv">
+      <img src="../../assets/images/linux.png">
+      <p>359</p>
+      <h6 class="textChange">{{textCommands}}</h6>
+    </div>
+    <div class="secondDiv">
+      <img src="../../assets/images/category.png">
+      <p>27</p>
+      <h6 class="textChange">{{textCategorys}}</h6>
+    </div>
+  </div>
+
+  <div class="bottomDiv">
+    <div *ngIf="loader" class="form">
+      <form id="form">
+        <ion-item class="ion-margin-botton">
+          <ion-input #command (keyup)="search(command.value)" placeholder="Search" ></ion-input>
+        </ion-item>
+      </form>
+    </div>
+    <div class="gridDiv">
+
+      <div *ngIf="!loader" class="loader">
+        <img src="../../assets/loader.gif">
+      </div>
+
+      <div class="box" *ngFor="let item of categorys" [routerLink]="['/list',item.name]">
+        <img [src]="item.ico" >
+        <p>{{ item.name }}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/commands']">
+      <ion-icon name="reorder-four-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
